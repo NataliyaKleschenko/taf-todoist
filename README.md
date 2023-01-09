@@ -1,5 +1,5 @@
 # Todoist App Test Automation Project
-<img width="100%" style="vertical-align:middle" title="Todoist" src="C:\src\taf-todoist\src\test\resources\img\Todoist_logo.png">
+<img width="100%" style="vertical-align:middle" title="Todoist" src="src/test/resources/img/Todoist_logo.png">
 
 The project implemented UI and API tests for the Todoist web app.
 
