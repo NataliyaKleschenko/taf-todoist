@@ -55,8 +55,8 @@ public class LoginPage extends BasePage {
     }
 
     public LoginPage clearFilledField(WebElement webElement) {
-        webElement.sendKeys(Keys.CONTROL + "A");
-        webElement.sendKeys(Keys.DELETE);
+        CharSequence[] deleteAllSymbols = {Keys.chord(Keys.SHIFT, Keys.HOME), Keys.DELETE};
+        webElement.sendKeys(deleteAllSymbols);
         return this;
     }
 
