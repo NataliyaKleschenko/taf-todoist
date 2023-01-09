@@ -2,6 +2,7 @@ package com.todoist.ui.pages;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.HashMap;
@@ -53,8 +54,9 @@ public class LoginPage extends BasePage {
         return this;
     }
     public LoginPage clearFilledField(WebElement webElement) {
-        webElement.sendKeys(Keys.CONTROL + "A");
-        webElement.sendKeys(Keys.DELETE);
+        Actions actions = new Actions(driver);
+        actions.sendKeys(webElement,Keys.CONTROL + "A").pause(2).build().perform();
+        actions.sendKeys(webElement,Keys.DELETE).pause(2).build().perform();
         logger.info(webElement.getLocation());
         return this;
     }
