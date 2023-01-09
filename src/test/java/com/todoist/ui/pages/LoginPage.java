@@ -2,7 +2,6 @@ package com.todoist.ui.pages;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.HashMap;
@@ -47,32 +46,36 @@ public class LoginPage extends BasePage {
         logger.info(inputEmail.getLocation());
         return this;
     }
+
     public LoginPage typePassword(String password) {
         waitForVisibilityOfElement(inputPassword).clear();
         inputPassword.sendKeys(password);
         logger.info(inputPassword.getLocation());
         return this;
     }
+
     public LoginPage clearFilledField(WebElement webElement) {
-        Actions actions = new Actions(driver);
-        actions.sendKeys(webElement,Keys.CONTROL + "A").pause(2).build().perform();
-        actions.sendKeys(webElement,Keys.DELETE).pause(2).build().perform();
-        logger.info(webElement.getLocation());
+        webElement.sendKeys(Keys.CONTROL + "A");
+        webElement.sendKeys(Keys.DELETE);
         return this;
     }
+
     public LoginPage clearInputEmail() {
         clearFilledField(inputEmail);
         return this;
     }
+
     public LoginPage clearInputPassword() {
         clearFilledField(inputPassword);
         return this;
     }
+
     public LoginPage clickOnSubmitButton() {
         submitButton.click();
         logger.info(submitButton.getLocation());
         return this;
     }
+
     public String getTextFromLoginLabel() {
         return loginLabel.getText();
     }

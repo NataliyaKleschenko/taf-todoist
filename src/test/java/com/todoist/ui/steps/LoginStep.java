@@ -18,8 +18,8 @@ public class LoginStep extends LoginPage {
 
     public void loginInWithEmptyEmailAndEmptyPassword(User user) {
         typeEmail(user.getEmail())
-                .clearInputEmail()
                 .typePassword(user.getPassword())
+                .clearInputEmail()
                 .clearInputPassword()
                 .clickOnSubmitButton();
         logger.info("Login failed");
@@ -35,8 +35,8 @@ public class LoginStep extends LoginPage {
 
     public void loginInWithEmptyEmailAndFilledPassword(User user) {
         typeEmail(user.getEmail())
-                .clearInputEmail()
                 .typePassword(user.getPassword())
+                .clearInputEmail()
                 .clickOnSubmitButton();
         logger.info("Login failed");
     }
