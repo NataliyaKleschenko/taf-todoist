@@ -46,7 +46,6 @@ public class LoginPage extends BasePage {
         logger.info(inputEmail.getLocation());
         return this;
     }
-
     public LoginPage typePassword(String password) {
         waitForVisibilityOfElement(inputPassword).clear();
         inputPassword.sendKeys(password);
@@ -96,15 +95,15 @@ public class LoginPage extends BasePage {
     }
 
     public String getTextFromTooShortPasswordMessage() {
-        return tooShortPasswordMessage.getText();
+        return waitForVisibilityOfElement(tooShortPasswordMessage).getText();
     }
 
     public String getTextFromWrongEmailOrPasswordMessage() {
-        return wrongEmailOrPasswordMessage.getText();
+        return waitForVisibilityOfElement(wrongEmailOrPasswordMessage).getText();
     }
 
     public String getTextFromWrongEmailMessage() {
-        return wrongEmailMessage.getText();
+        return waitForVisibilityOfElement(wrongEmailMessage).getText();
     }
 
     public Map<String, String> getLoginPageAttributes() {
