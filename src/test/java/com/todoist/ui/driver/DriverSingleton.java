@@ -17,7 +17,7 @@ public class DriverSingleton {
                 .addArguments("--lang=en")
                 .addArguments("--incognito")
                 .addArguments("--headless")
-                .addArguments("--window-size=1800x900");
+                .addArguments("--window-size=1920x1200");
         if (driver == null) {
             driver = new ChromeDriver(options);
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(IMPLICITLY_WAIT));
