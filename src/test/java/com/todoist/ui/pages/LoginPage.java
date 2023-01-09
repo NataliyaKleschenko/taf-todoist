@@ -54,7 +54,13 @@ public class LoginPage extends BasePage {
     }
     public LoginPage clearFilledField(WebElement webElement) {
         webElement.sendKeys(Keys.CONTROL + "A");
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         webElement.sendKeys(Keys.DELETE);
+        logger.info(webElement.getLocation());
         return this;
     }
     public LoginPage clearInputEmail() {
