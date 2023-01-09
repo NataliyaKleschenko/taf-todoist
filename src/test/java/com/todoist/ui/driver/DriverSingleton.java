@@ -15,11 +15,12 @@ public class DriverSingleton {
     public static WebDriver getDriver() {
         options = new ChromeOptions()
                 .addArguments("--lang=en")
-                .addArguments("--incognito")
-                .addArguments("--headless")
-                .addArguments("--window-size=1920x1200");
+                .addArguments("--incognito");
+               // .addArguments("--headless")
+               // .addArguments("--window-size=1920x1200");
         if (driver == null) {
             driver = new ChromeDriver(options);
+            driver.manage().window().maximize();
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(IMPLICITLY_WAIT));
         }
         return driver;
