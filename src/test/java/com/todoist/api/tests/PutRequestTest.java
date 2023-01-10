@@ -11,7 +11,7 @@ public class PutRequestTest extends BaseTest{
     String id;
     @Test
     @Description("testing the POST(UPDATE) test query with updating the label data by the name field")
-    public void putRequestCheckStatusCodeAndJsonBody() {
+    public void updateLabelById() {
         id = RestAssured.given()
                 .spec(labelRequestSpec)
                 .body(new LabelRequest("patch", "red"))
