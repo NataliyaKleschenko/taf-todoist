@@ -20,7 +20,7 @@ public class CreateNewLabelTest extends BaseTest{
         assertThat(response.getColor()).isEqualTo(color);
         ObjectAssert<JsonSchemaValidator> jsonSchemaValidatorObjectAssert = assertThat(matchesJsonSchemaInClasspath("SchemaLabelsByName.json"));
     }
-    @Test(priority = 3)
+    @Test(priority = 1)
     public void testCreateNewLabelWithExistingName() {
         String name = "First";
         String color = "yellow";
@@ -29,7 +29,7 @@ public class CreateNewLabelTest extends BaseTest{
         assertThat(response).isEqualTo("Label with this name already exists");
     }
 
-    @Test(priority = 4)
+    @Test(priority = 2)
     public void testCreateNewLabelWithIncorrectColor() {
         String name = "Second";
         String color = "indigo";
