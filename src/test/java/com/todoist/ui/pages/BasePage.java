@@ -33,6 +33,8 @@ public class BasePage {
     }
 
     protected WebElement waitForVisibilityOfElement(WebElement webElement) {
-        return new WebDriverWait(driver, Duration.ofSeconds(WAIT_FOR_ELEMENT)).until(ExpectedConditions.visibilityOf(webElement));
+        WebElement element = new WebDriverWait(driver, Duration.ofSeconds(WAIT_FOR_ELEMENT)).until(ExpectedConditions.visibilityOf(webElement));
+        logger.info("Wait until the element is visible");
+        return element;
     }
 }

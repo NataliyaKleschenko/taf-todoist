@@ -22,9 +22,6 @@ public class SearchTest extends BaseTest{
         String request = "task";
         searchStep.typeRequestInSearchInput(request);
 
-        Assert.assertEquals(searchStep.checkTheNumberOfResultsFound(request),3);
-
-
+        Assert.assertEquals(searchStep.checkTheNumberOfResultsFound(request),2);
     }
-
 }

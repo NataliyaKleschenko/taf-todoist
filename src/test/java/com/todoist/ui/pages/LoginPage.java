@@ -23,7 +23,7 @@ public class LoginPage extends BasePage {
     private WebElement continueWithFacebookLabel;
     @FindBy(xpath = "//span[contains(text(),'Continue with Apple')]")
     private WebElement continueWithAppleLabel;
-    @FindBy(xpath = "//div[@class='_9NFLCmx a83bd4e0 a8d37c6e _6a3e5ade c6a2474f']")
+    @FindBy(xpath = "//a[@href='/auth/password']") //
     private WebElement forgotPasswordLabel;
     @FindBy(xpath = "//div[contains(text(),'Don’t have an account? ')]")
     private WebElement doNotHaveAccountLabel;

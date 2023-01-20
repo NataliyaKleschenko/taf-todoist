@@ -22,15 +22,15 @@ public class LoginTest extends BaseTest{
     }
     @Test
     public void testCheckPageAttributes() {
-        LoginPage loginPage = new LoginPage();
+        LoginStep loginStep = new LoginStep();
         Map<String,String> expectedAttributes = new HashMap<>();
-        expectedAttributes.put(LoginPage.LOG_IN,"Log in");
-        expectedAttributes.put(LoginPage.GOOGLE,"Continue with Google");
-        expectedAttributes.put(LoginPage.FACEBOOK,"Continue with Facebook");
-        expectedAttributes.put(LoginPage.APPLE,"Continue with Apple");
-        expectedAttributes.put(LoginPage.PASSWORD,"Forgot your password?");
-        expectedAttributes.put(LoginPage.DO_NOT_HAVE_ACCOUNT,"Don’t have an account? Sign up");
-        Map<String,String> actualAttributes = loginPage.getLoginPageAttributes();
+        expectedAttributes.put(LoginStep.LOG_IN,"Log in");
+        expectedAttributes.put(LoginStep.GOOGLE,"Continue with Google");
+        expectedAttributes.put(LoginStep.FACEBOOK,"Continue with Facebook");
+        expectedAttributes.put(LoginStep.APPLE,"Continue with Apple");
+        expectedAttributes.put(LoginStep.PASSWORD,"Forgot your password?");
+        expectedAttributes.put(LoginStep.DO_NOT_HAVE_ACCOUNT,"Don’t have an account? Sign up");
+        Map<String,String> actualAttributes = loginStep.getLoginPageAttributes();
 
         Assert.assertEquals(actualAttributes,expectedAttributes);
     }

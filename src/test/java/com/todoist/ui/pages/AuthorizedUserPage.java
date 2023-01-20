@@ -6,7 +6,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
 public class AuthorizedUserPage extends BasePage {
-    @FindBy(xpath = "//div[@class='+syWHcL _0J7x-Vo settings_avatar c6a2474f']")
+    @FindBy(xpath = "//div[contains(@class,'Vo settings_avatar')]")
     private WebElement userInfoButton;
     @FindBy(xpath = "//p[@class='user_menu_email']")
     private WebElement userEmailLocator;
@@ -18,7 +18,7 @@ public class AuthorizedUserPage extends BasePage {
     private WebElement upcomingButton;
     @FindBy(xpath = "//li[@id='filters_labels']")
     private WebElement filterAndLabelButton;
-    @FindBy(xpath = "//a[@class='c6a2474f _04f32a92 cc313af7 b7b3664a ee7114e6 _57850d52']")
+    @FindBy(xpath = "//a[@href='/app/projects']")
     private WebElement projectButton;
     @FindBy(xpath = "//button[@aria-label='Add project']")
     private WebElement addProjectButton;
@@ -26,7 +26,7 @@ public class AuthorizedUserPage extends BasePage {
     private WebElement addProjectInput;
     @FindBy(xpath = "//input[@placeholder='Search']")
     private WebElement searchInput;
-    @FindBy(xpath = "//*[@id='agenda_view']/header/div/div[1]/h1/small")
+    @FindBy(xpath = "//small")
     private WebElement currentDateButton;
     @FindBy(xpath = "//button[@id='quick_add_task_holder']")
     private WebElement addTaskButton;
@@ -40,15 +40,15 @@ public class AuthorizedUserPage extends BasePage {
     private WebElement priorityHighLocator;
     @FindBy(xpath = "//button[@data-testid='task-editor-submit-button']")
     private WebElement submitTaskButton;
-    @FindBy(xpath = "//div[@data-task-list-id='today']//div[@class='markdown_content task_description']")
+    @FindBy(xpath = "//div[contains(@class,'task_content')]")
     private WebElement addedTaskLocator;
     @FindBy(xpath = "//span[@class='color_dropdown_select__name']")
     private WebElement colorButton;
     @FindBy(xpath = "//li[@aria-label='sky_blue']")
     private WebElement colorSkyBlue;
-    @FindBy(xpath = "//footer/div/button[2]/span")
+    @FindBy(xpath = "//button[@type='submit']")
     private WebElement submitProjectButton;
-    @FindBy(xpath = "//*[@id='projects_list']/li/div/div/a/span[2]")
+    @FindBy(xpath = "//ul[contains(@id,'projects_list')]")
     private WebElement addedProjectLocator;
 
     public AuthorizedUserPage clickOnUserInfoButton() {

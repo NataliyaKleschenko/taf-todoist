@@ -38,7 +38,7 @@ dependencies {
             'io.qameta.allure:allure-commandline:2.20.0',
             'io.qameta.allure:allure-assertj:2.20.0',
             'io.qameta.allure:allure-rest-assured:2.20.0',
-            'org.assertj:assertj-core:3.23.1',
+            'org.assertj:assertj-core:3.24.1',
             'com.fasterxml.jackson.core:jackson-annotations:2.14.0',
             'com.fasterxml.jackson.core:jackson-databind:2.14.0',
             'io.rest-assured:json-schema-validator:5.3.0'
