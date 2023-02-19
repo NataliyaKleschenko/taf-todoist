@@ -10,7 +10,7 @@ import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInC
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class CreateNewLabelTest extends BaseTest{
-    @Test(priority = 0)
+    @Test
     public void testCreateNewLabel() {
         String name = "First";
         String color = "red";
@@ -20,16 +20,16 @@ public class CreateNewLabelTest extends BaseTest{
         assertThat(response.getColor()).isEqualTo(color);
         ObjectAssert<JsonSchemaValidator> jsonSchemaValidatorObjectAssert = assertThat(matchesJsonSchemaInClasspath("SchemaLabelsByName.json"));
     }
-    @Test(priority = 1)
+    @Test(dependsOnMethods = "testCreateNewLabel")
     public void testCreateNewLabelWithExistingName() {
         String name = "First";
-        String color = "yellow";
+        String color = "red";
         String response = CreateLabelSteps.createNewLabelWithError(name, color);
 
         assertThat(response).isEqualTo("Label with this name already exists");
     }
 
-    @Test(priority = 2)
+    @Test
     public void testCreateNewLabelWithIncorrectColor() {
         String name = "Second";
         String color = "indigo";
